@@ -55,7 +55,7 @@ var myHours = [
 ];
 
 //display current day date
-var currentDay = $("#current-day");
+var currentDay = $("#currentday");
 console.log("currentday", currentDay)
 
 var todaysDate = dayjs().$d;
