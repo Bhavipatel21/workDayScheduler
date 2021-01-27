@@ -68,7 +68,6 @@ var timeBlock = $("#time-block");
 $(document).ready(function () {
     
     //create foreach method for creating rows,columns,buttons and color-code timeblock
-
     myHours.forEach(function (myHours) {
        
         var hourText = myHours.workhour;
@@ -80,6 +79,7 @@ $(document).ready(function () {
         var span = $("<span>" + hourText + "</span>");
         span.attr("class", "hour col-1");
         row.append(span);
+
         //add column for event input text
         var input = $("<input>");
         input.attr("class", "col-10");
@@ -99,13 +99,13 @@ $(document).ready(function () {
         //add column for - savebtn
         var button = $("<button>").addClass("saveBtn col-1");
         row.append(button);
+
         //add font-awesome image to button
         var btnImg = $("<i>").addClass("fas fa-save fa-2x");
         button.append(btnImg);
         
 
         //the text for that event is saved in local storage
-
         var key  = setHourId
         var value = localStorage.getItem(key)
         input.val(value)
