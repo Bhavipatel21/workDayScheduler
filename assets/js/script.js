@@ -1,5 +1,4 @@
 /*
-
  create a daily planner to create a schedule
     open the planner
     the current day is displayed at the top of the calendar
@@ -54,22 +53,16 @@ var myHours = [
     },
 ];
 
-//display current day date
+//display current day date using dayjs() 
 var currentDay = $("#currentday");
-console.log("currentday", currentDay)
-
 var todaysDate = dayjs().$d;
-console.log("todays date", todaysDate);
-
 currentDay.text(todaysDate);
 
-
+//get current hour 
 var currentHour = dayjs().$H;
-var pastHour = dayjs().subtract(1, "h").$H;
-var timeBlock = $("#time-block");
 
-var hourText = myHours.workhour;
-var setHourId = myHours.sethour;
+//select timeblock id to add rows and columns
+var timeBlock = $("#time-block");
 
 //load the page on document.ready function
 $(document).ready(function () {
@@ -81,13 +74,13 @@ $(document).ready(function () {
         var hourText = myHours.workhour;
         var setHourId = myHours.sethour;
        
-        //create row and columns
+        //create row
         var row = $("<section>").addClass("row");
         timeBlock.append(row);
         var span = $("<span>" + hourText + "</span>");
         span.attr("class", "hour col-1");
         row.append(span);
-
+        //add column for event input text
         var input = $("<input>");
         input.attr("class", "col-10");
         input.attr("id", setHourId);
@@ -103,25 +96,24 @@ $(document).ready(function () {
             input.addClass("present");
         }
 
-        //savebtn
+        //add column for - savebtn
         var button = $("<button>").addClass("saveBtn col-1");
         row.append(button);
-        //font-awesome image
-        var btnimg = $("<i>").addClass("fas fa-save fa-2x");
-        button.append(btnimg);
+        //add font-awesome image to button
+        var btnImg = $("<i>").addClass("fas fa-save fa-2x");
+        button.append(btnImg);
+        
+
+        //the text for that event is saved in local storage
 
         var key  = setHourId
-        //console.log(key)
         var value = localStorage.getItem(key)
         input.val(value)
-                
+        
         row.on('click', 'button', function(event) {
-            event.preventDefault();
-            //console.log(event);
-
-            //var key = setHourId
-            var value = input.val();
-            localStorage.setItem(key, value);
+        event.preventDefault();
+        var value = input.val();
+        localStorage.setItem(key, value);
         
            
           });
