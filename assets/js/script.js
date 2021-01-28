@@ -67,6 +67,7 @@ $(document).ready(function () {
 
         //add column for event input text
         var input = $("<input>").addClass("col-10");
+        input.attr("id", setHourId);
         row.append(input);
 
         //each time block is color-coded to indicate whether it is in the past, present, or future

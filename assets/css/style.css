@@ -2,6 +2,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1;
+  background-image: url("../images/bgimage.jpg");
 }
 
 textarea{
@@ -16,9 +17,10 @@ textarea{
 .jumbotron {
   text-align: center;
   background-color: transparent;
-  color: black;
+  color: rgb(12, 12, 12);
   border-radius: 0;
-  border-bottom: 10px solid black;
+  border-bottom: 10px solid rgb(107, 196, 107);  
+  background-image: url("../images/bgimage2.jpg");
 }
 
 .description{
@@ -69,3 +71,4 @@ textarea{
   font-size: 20px;
   transition: all .3s ease-in-out;
 }
+
