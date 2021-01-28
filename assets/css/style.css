@@ -3,7 +3,8 @@ body {
   font-size: 16px;
   line-height: 1;
   background-image: url("../images/bgimage2.jpg");
-  background-size: auto;
+  background-size: cover;
+
 }
 
 textarea{
