@@ -39,7 +39,7 @@ Navigate to : https://bhavipatel21.github.io/workDayScheduler/
 
 
 ## Mock-Up
-[myDailyCalendar] (./assets/images/mycalendar.jpg)
+![myDailyCalendar](./assets/images/mycalendar.jpg)
 
 
 ## Resources 
