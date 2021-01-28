@@ -35,9 +35,11 @@ THEN the saved events persist
 
 ## Web Url :
 
+Navigate to : https://bhavipatel21.github.io/workDayScheduler/
 
 
 ## Mock-Up
+
 
 
 
