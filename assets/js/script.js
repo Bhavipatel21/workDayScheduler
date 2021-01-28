@@ -1,18 +1,11 @@
-/*
- create a daily planner to create a schedule
-    open the planner
-    the current day is displayed at the top of the calendar
-    scroll down
-       presented with time blocks for standard business hours
-            view the time blocks for that day
-    each time block is color-coded to indicate whether it is in the past, present, or future
-    click into a time block
-    enter an event
-    click the save button for that time block
-    the text for that event is saved in local storage
-    refresh the page
-    the saved events persist */
-//set daily calander work hours and sethour to compare currenthours
+//display current day date using dayjs() 
+var currentDay = $("#currentday");
+var now = dayjs();
+var todaysDate = (now.format("dddd, MMMM D YYYY"));
+currentDay.text(todaysDate);
+
+//get current hour 
+var currentHour = dayjs().$H;
 
 var myHours = [
     {
@@ -51,16 +44,7 @@ var myHours = [
         workhour: "5pm",
         sethour: 17,
     },
-];
-
-//display current day date using dayjs() 
-var currentDay = $("#currentday");
-var now = dayjs();
-var todaysDate = (now.format("dddd, MMMM D YYYY"));
-currentDay.text(todaysDate);
-
-//get current hour 
-var currentHour = dayjs().$H;
+  ];
 
 //select timeblock id to add rows and columns
 var timeBlock = $("#time-block");
@@ -70,21 +54,19 @@ $(document).ready(function () {
     
     //create foreach method for creating rows,columns,buttons and color-code timeblock
     myHours.forEach(function (myHours) {
-       
+
         var hourText = myHours.workhour;
         var setHourId = myHours.sethour;
-       
+
         //create row
         var row = $("<section>").addClass("row");
         timeBlock.append(row);
-        var span = $("<span>" + hourText + "</span>");
-        span.attr("class", "hour col-1");
+        
+        var span = $("<span>" + hourText + "</span>").addClass("hour col-1");
         row.append(span);
 
         //add column for event input text
-        var input = $("<input>");
-        input.attr("class", "col-10");
-        input.attr("id", setHourId);
+        var input = $("<input>").addClass("col-10");
         row.append(input);
 
         //each time block is color-coded to indicate whether it is in the past, present, or future
@@ -116,10 +98,10 @@ $(document).ready(function () {
         var value = input.val();
         localStorage.setItem(key, value);
         
-           
-          });
+
+});
 
     });
 
-   
+
 });
