@@ -13,9 +13,6 @@ I WANT to add important events to a daily planner
 SO THAT I can manage my time effectively
 ```
 
-
-
-
 ## Acceptance Criteria 
 
 GIVEN I am using a daily planner to create a schedule
@@ -63,3 +60,10 @@ Navigate to : https://bhavipatel21.github.io/workDayScheduler/
 
 
 ## Test Cases
+ * Verify user can open the daily planner webpage without any issues/errors
+ * Verify current day is displayed at the top of the calendar
+ * Verify each time bloacks are presented with standard business hours
+ * Verify each time block is color-coded to indicate whether it is in the past, present, or future
+ * Verify user can click in to time block to enter an event
+ * Verify once user clicks on save button text for the event is saved in local storage
+ * Verify once user refresh the page the saved events persist
