@@ -66,7 +66,7 @@ $(document).ready(function () {
         row.append(span);
 
         //add column for event input text
-        var input = $("<input>").addClass("col-10");
+        var input = $("<textarea>").addClass("col-10 textarea");
         input.attr("id", setHourId);
         row.append(input);
 
